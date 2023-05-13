@@ -30,35 +30,25 @@ public class NBB {
         int pontoT2 = Integer.parseInt(lineS[4]);
         // inicio o objeto t2 e atualizo o valor de pontos para o atual
 
-        Team team1 = Match.buscarOuCriarTime(teams, nomeT1);
-        Team team2 = Match.buscarOuCriarTime(teams, nomeT2);
+        Team team1 = Match.buscarOuCriarTeam(teams, nomeT1);
+        Team team2 = Match.buscarOuCriarTeam(teams, nomeT2);
 
         team1.somaPontos(pontoT1);
         team2.somaPontos(pontoT2);
 
-        // System.out.println(team1.toString());
-        // System.out.println(team2.toString());
-        listaPartidas.add(new Match(team1, team2));
-      }
-
-      
-      for (Match partida: listaPartidas ) {
-        partida.matchVictory(partida.buscarTime1(), partida.buscarTime2());
-        //System.out.println(partida.toString());
+        Match atualMatch = new Match(team1, team2);
+        atualMatch.matchVictory();
         
-      }
-
-      for (Match partida: listaPartidas) {
-        System.out.println(partida.buscarTime1().toString());
-        System.out.println(partida.buscarTime2().toString());
+        listaPartidas.add(atualMatch); 
       }
       
-      // for (Team team : teams) { 
-      //   team.toString();
+      // System.out.println("Lista Team team: teams");
+      // for (Team team: teams) {
+      //   System.out.println(team.toString());
       // }
-      // for (Team team: teamMap.values(Match partida.buscarTime1())) {
-      //   team.toString();
-      // }
+      
+      Collections.sort(teams);
+      System.out.println(teams);
 
       inp.close();
     } catch (Exception e) {

@@ -8,16 +8,17 @@ public class Match {
   private Team team1;
   private Team team2;
   
-  public Match(){
+  // public Match(){
 
-  }
+  // }
   
   public Match(Team team1, Team team2) {
     this.team1 = team1;
     this.team2 = team2;
+    // matchVictory();
   }
 
-  public static Team buscarOuCriarTime(List<Team> teams, String nome) {
+  public static Team buscarOuCriarTeam(List<Team> teams, String nome) {
     for (Team team : teams) { 
       if (team.consultarNome().equals(nome)) {
         return team;
@@ -46,7 +47,7 @@ public class Match {
     return team2;
   }
 
-  public void matchVictory( Team team1, Team team2) {
+  public void matchVictory( ) {
     // String nomeTime1 = team1.consultarNome();
     if ( team1.pontosAtuais() < team2.pontosAtuais()) {
       team2.incrementaVitoria();
