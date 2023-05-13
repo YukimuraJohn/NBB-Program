@@ -41,16 +41,16 @@ public class Team implements Comparable<Team> {
     } else if (this.qnt_vit < otherTeam.totalVitoria()) {
       return 1;
     } else {
-      if (this.qnt_total_pt > otherTeam.totalVitoria()) {
-        return 1;
-      } else {
+      if (this.qnt_total_pt > otherTeam.totalDePontos()) {
         return -1;
+      } else {
+        return 1;
       }
     }
   }
 
   @Override
   public String toString() {
-    return (consultarNome() + " com " + pontosAtuais() + " pontos e tem " + totalVitoria() + " vitorias e " + totalDePontos() + " como total de pontos");
+    return (consultarNome() + " com " + totalVitoria() + " de vitorias e " + totalDePontos() + " como total de pontos" + System.lineSeparator());
   }
 }

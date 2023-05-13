@@ -4,18 +4,13 @@ import java.util.*;
 
 public class Match {
   
-  
   private Team team1;
   private Team team2;
-  
-  // public Match(){
 
-  // }
   
   public Match(Team team1, Team team2) {
     this.team1 = team1;
     this.team2 = team2;
-    // matchVictory();
   }
 
   public static Team buscarOuCriarTeam(List<Team> teams, String nome) {
@@ -48,7 +43,6 @@ public class Match {
   }
 
   public void matchVictory( ) {
-    // String nomeTime1 = team1.consultarNome();
     if ( team1.pontosAtuais() < team2.pontosAtuais()) {
       team2.incrementaVitoria();
     } else {
